@@ -1,0 +1,235 @@
+shiyanlou:~/ $ git                                                    [9:01:00]
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+\u8fd9\u4e9b\u662f\u5404\u79cd\u573a\u5408\u5e38\u89c1\u7684 Git \u547d\u4ee4\uff1a
+
+\u5f00\u59cb\u4e00\u4e2a\u5de5\u4f5c\u533a\uff08\u53c2\u89c1\uff1agit help tutorial\uff09
+   clone      \u514b\u9686\u4e00\u4e2a\u4ed3\u5e93\u5230\u4e00\u4e2a\u65b0\u76ee\u5f55
+   init       \u521b\u5efa\u4e00\u4e2a\u7a7a\u7684 Git \u4ed3\u5e93\u6216\u91cd\u65b0\u521d\u59cb\u5316\u4e00\u4e2a\u5df2\u5b58\u5728\u7684\u4ed3\u5e93
+
+\u5728\u5f53\u524d\u53d8\u66f4\u4e0a\u5de5\u4f5c\uff08\u53c2\u89c1\uff1agit help everyday\uff09
+   add        \u6dfb\u52a0\u6587\u4ef6\u5185\u5bb9\u81f3\u7d22\u5f15
+   mv         \u79fb\u52a8\u6216\u91cd\u547d\u540d\u4e00\u4e2a\u6587\u4ef6\u3001\u76ee\u5f55\u6216\u7b26\u53f7\u94fe\u63a5
+   reset      \u91cd\u7f6e\u5f53\u524d HEAD \u5230\u6307\u5b9a\u72b6\u6001
+   rm         \u4ece\u5de5\u4f5c\u533a\u548c\u7d22\u5f15\u4e2d\u5220\u9664\u6587\u4ef6
+
+\u68c0\u67e5\u5386\u53f2\u548c\u72b6\u6001\uff08\u53c2\u89c1\uff1agit help revisions\uff09
+   bisect     \u901a\u8fc7\u4e8c\u5206\u67e5\u627e\u5b9a\u4f4d\u5f15\u5165 bug \u7684\u63d0\u4ea4
+   grep       \u8f93\u51fa\u548c\u6a21\u5f0f\u5339\u914d\u7684\u884c
+   log        \u663e\u793a\u63d0\u4ea4\u65e5\u5fd7
+   show       \u663e\u793a\u5404\u79cd\u7c7b\u578b\u7684\u5bf9\u8c61
+   status     \u663e\u793a\u5de5\u4f5c\u533a\u72b6\u6001
+
+\u6269\u5c55\u3001\u6807\u8bb0\u548c\u8c03\u6821\u60a8\u7684\u5386\u53f2\u8bb0\u5f55
+   branch     \u5217\u51fa\u3001\u521b\u5efa\u6216\u5220\u9664\u5206\u652f
+   checkout   \u5207\u6362\u5206\u652f\u6216\u6062\u590d\u5de5\u4f5c\u533a\u6587\u4ef6
+   commit     \u8bb0\u5f55\u53d8\u66f4\u5230\u4ed3\u5e93
+   diff       \u663e\u793a\u63d0\u4ea4\u4e4b\u95f4\u3001\u63d0\u4ea4\u548c\u5de5\u4f5c\u533a\u4e4b\u95f4\u7b49\u7684\u5dee\u5f02
+   merge      \u5408\u5e76\u4e24\u4e2a\u6216\u66f4\u591a\u5f00\u53d1\u5386\u53f2
+   rebase     \u672c\u5730\u63d0\u4ea4\u8f6c\u79fb\u81f3\u66f4\u65b0\u540e\u7684\u4e0a\u6e38\u5206\u652f\u4e2d
+   tag        \u521b\u5efa\u3001\u5217\u51fa\u3001\u5220\u9664\u6216\u6821\u9a8c\u4e00\u4e2a GPG \u7b7e\u540d\u7684\u6807\u7b7e\u5bf9\u8c61
+
+\u534f\u540c\uff08\u53c2\u89c1\uff1agit help workflows\uff09
+   fetch      \u4ece\u53e6\u5916\u4e00\u4e2a\u4ed3\u5e93\u4e0b\u8f7d\u5bf9\u8c61\u548c\u5f15\u7528
+   pull       \u83b7\u53d6\u5e76\u6574\u5408\u53e6\u5916\u7684\u4ed3\u5e93\u6216\u4e00\u4e2a\u672c\u5730\u5206\u652f
+   push       \u66f4\u65b0\u8fdc\u7a0b\u5f15\u7528\u548c\u76f8\u5173\u7684\u5bf9\u8c61
+
+\u547d\u4ee4 'git help -a' \u548c 'git help -g' \u663e\u793a\u53ef\u7528\u7684\u5b50\u547d\u4ee4\u548c\u4e00\u4e9b\u6982\u5ff5\u5e2e\u52a9\u3002
+\u67e5\u770b 'git help <\u547d\u4ee4>' \u6216 'git help <\u6982\u5ff5>' \u4ee5\u83b7\u53d6\u7ed9\u5b9a\u5b50\u547d\u4ee4\u6216\u6982\u5ff5\u7684
+\u5e2e\u52a9\u3002
+shiyanlou:~/ $ mkdir uni                                              [9:01:21]
+shiyanlou:~/ $ cd uni                                                 [9:41:22]
+shiyanlou:uni/ $ gedit README.md                                      [9:41:26]
+
+(gedit:242): GVFS-RemoteVolumeMonitor-WARNING **: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+
+(gedit:242): Gtk-WARNING **: Calling Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.gnome.SessionManager was not provided by any .service files
+shiyanlou:uni/ $ cat README.md                                        [9:42:03]
+#Demo
+shiyanlou:uni/ $ git init                                             [9:42:19]
+\u521d\u59cb\u5316\u7a7a\u7684 Git \u4ed3\u5e93\u4e8e /home/shiyanlou/uni/.git/
+shiyanlou:uni/ (master*) $ ls -la                                     [9:42:43]
+\u603b\u7528\u91cf 16
+drwxrwxr-x  3 shiyanlou shiyanlou 4096 2\u6708  11 09:42 .
+drwxr-xr-x 29 shiyanlou shiyanlou 4096 2\u6708  11 09:43 ..
+drwxrwxr-x  7 shiyanlou shiyanlou 4096 2\u6708  11 09:42 .git
+-rw-rw-r--  1 shiyanlou shiyanlou    6 2\u6708  11 09:42 README.md
+shiyanlou:uni/ (master*) $ cd ~                                       [9:43:11]
+shiyanlou:~/ $ cd /home/shiyanlou/uni                                 [9:43:53]
+shiyanlou:uni/ (master*) $ git add README.md                          [9:44:07]
+shiyanlou:uni/ (master*) $ git status                                 [9:44:18]
+\u4f4d\u4e8e\u5206\u652f master
+
+\u521d\u59cb\u63d0\u4ea4
+
+\u8981\u63d0\u4ea4\u7684\u53d8\u66f4\uff1a
+  \uff08\u4f7f\u7528 "git rm --cached <\u6587\u4ef6>..." \u4ee5\u53d6\u6d88\u6682\u5b58\uff09
+
+	\u65b0\u6587\u4ef6\uff1a   README.md
+
+shiyanlou:uni/ (master*) $ git gonfig --global user.name "TangDear"   [9:44:26]
+git\uff1a'gonfig' \u4e0d\u662f\u4e00\u4e2a git \u547d\u4ee4\u3002\u53c2\u89c1 'git --help'\u3002
+
+\u60a8\u6307\u7684\u662f\u8fd9\u4e2a\u4e48\uff1f
+	config
+shiyanlou:uni/ (master*) $ git config --global user.name "TangDear"   [9:45:28]
+shiyanlou:uni/ (master*) $ git config --global user.email "411577403@qq.com"
+shiyanlou:uni/ (master*) $ git commit -m "first commit"               [9:46:31]
+[master \uff08\u6839\u63d0\u4ea4\uff09 aadf871] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+shiyanlou:uni/ (master) $ git remote add origin https://github.com/TangDear/uni.git
+shiyanlou:uni/ (master) $ git push origin master                      [9:48:20]
+Username for 'https://github.com': TangDear
+Password for 'https://TangDear@github.com': 
+\u5bf9\u8c61\u8ba1\u6570\u4e2d: 3, \u5b8c\u6210.
+\u5199\u5165\u5bf9\u8c61\u4e2d: 100% (3/3), 215 bytes | 0 bytes/s, \u5b8c\u6210.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/TangDear/uni.git
+ * [new branch]      master -> master
+shiyanlou:uni/ (master) $ git clone [url]                             [9:49:42]
+zsh: no matches found: [url]
+shiyanlou:uni/ (master) $ git clone https://github.com/shiyanlou/gitproject
+\u6b63\u514b\u9686\u5230 'gitproject'...
+remote: Enumerating objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 3
+\u5c55\u5f00\u5bf9\u8c61\u4e2d: 100% (3/3), \u5b8c\u6210.
+\u68c0\u67e5\u8fde\u63a5... \u5b8c\u6210\u3002
+shiyanlou:uni/ (master*) $ cd !                                       [9:52:27]
+cd: \u6ca1\u6709\u90a3\u4e2a\u6587\u4ef6\u6216\u76ee\u5f55: !
+shiyanlou:uni/ (master*) $ cd ~                                       [9:52:33]
+shiyanlou:~/ $ ls                                                     [9:52:36]
+Code     golang  node_modules  src-gen  webpack.config.js
+Desktop  lib     package.json  uni      yarn.lock
+shiyanlou:~/ $ git clone https://github.com/shiyanlou/gitproject      [9:52:37]
+\u6b63\u514b\u9686\u5230 'gitproject'...
+remote: Enumerating objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 3
+\u5c55\u5f00\u5bf9\u8c61\u4e2d: 100% (3/3), \u5b8c\u6210.
+\u68c0\u67e5\u8fde\u63a5... \u5b8c\u6210\u3002
+shiyanlou:~/ $ ls                                                     [9:53:26]
+Code     gitproject  lib           package.json  uni                yarn.lock
+Desktop  golang      node_modules  src-gen       webpack.config.js
+shiyanlou:~/ $ git clone https://github.com/TangDear/Louplus.fit      [9:53:27]
+\u6b63\u514b\u9686\u5230 'Louplus.fit'...
+Username for 'https://github.com': TangDear
+Password for 'https://TangDear@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/TangDear/Louplus.fit/'
+shiyanlou:~/ $ git clone https://github.com/TangDear/Louplus.git      [9:56:06]
+\u6b63\u514b\u9686\u5230 'Louplus'...
+warning: \u60a8\u4f3c\u4e4e\u514b\u9686\u4e86\u4e00\u4e2a\u7a7a\u4ed3\u5e93\u3002
+\u68c0\u67e5\u8fde\u63a5... \u5b8c\u6210\u3002
+shiyanlou:~/ $ ls                                                     [9:56:35]
+Code     gitproject  lib      node_modules  src-gen  webpack.config.js
+Desktop  golang      Louplus  package.json  uni      yarn.lock
+shiyanlou:~/ $ cd Louplu                                              [9:56:48]
+cd: \u6ca1\u6709\u90a3\u4e2a\u6587\u4ef6\u6216\u76ee\u5f55: Louplu
+shiyanlou:~/ $ cd louplus                                             [9:56:58]
+cd: \u6ca1\u6709\u90a3\u4e2a\u6587\u4ef6\u6216\u76ee\u5f55: louplus
+shiyanlou:~/ $ cd Louplus                                             [9:57:02]
+shiyanlou:Louplus/ (master) $ ^[[200~git clone https://github.com/TangDear/Louplus.
+]2;[200~git clone https://github.com/TangDear/Louplus.]1;[200~gitzsh: bad pattern: ^[[200~git
+shiyanlou:Louplus/ (master) $ wget https://labfile.oss.aliyuncs.com/courses/1330/linux.png
+--2020-02-11 09:58:16--  https://labfile.oss.aliyuncs.com/courses/1330/linux.png
+\u6b63\u5728\u89e3\u6790\u4e3b\u673a labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)... 47.110.177.159
+\u6b63\u5728\u8fde\u63a5 labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)|47.110.177.159|:443... \u5df2\u8fde\u63a5\u3002
+\u5df2\u53d1\u51fa HTTP \u8bf7\u6c42\uff0c\u6b63\u5728\u7b49\u5f85\u56de\u5e94... 200 OK
+\u957f\u5ea6\uff1a 132450 (129K) [image/png]
+\u6b63\u5728\u4fdd\u5b58\u81f3: \u201clinux.png\u201d
+
+linux.png           100%[===================>] 129.35K  --.-KB/s    in 0.01s   
+
+2020-02-11 09:58:17 (8.51 MB/s) - \u5df2\u4fdd\u5b58 \u201clinux.png\u201d [132450/132450])
+
+shiyanlou:Louplus/ (master*) $ wget https://labfile.oss.aliyuncs.com/courses/1330/python1.png
+--2020-02-11 09:58:17--  https://labfile.oss.aliyuncs.com/courses/1330/python1.png
+\u6b63\u5728\u89e3\u6790\u4e3b\u673a labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)... 47.110.177.159
+\u6b63\u5728\u8fde\u63a5 labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)|47.110.177.159|:443... \u5df2\u8fde\u63a5\u3002
+\u5df2\u53d1\u51fa HTTP \u8bf7\u6c42\uff0c\u6b63\u5728\u7b49\u5f85\u56de\u5e94... 200 OK
+\u957f\u5ea6\uff1a 126099 (123K) [image/png]
+\u6b63\u5728\u4fdd\u5b58\u81f3: \u201cpython1.png\u201d
+
+python1.png         100%[===================>] 123.14K  --.-KB/s    in 0.01s   
+
+2020-02-11 09:58:17 (8.39 MB/s) - \u5df2\u4fdd\u5b58 \u201cpython1.png\u201d [126099/126099])
+
+shiyanlou:Louplus/ (master*) $ wget https://labfile.oss.aliyuncs.com/courses/1330/python2.png
+--2020-02-11 09:58:17--  https://labfile.oss.aliyuncs.com/courses/1330/python2.png
+\u6b63\u5728\u89e3\u6790\u4e3b\u673a labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)... 47.110.177.159
+\u6b63\u5728\u8fde\u63a5 labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)|47.110.177.159|:443... \u5df2\u8fde\u63a5\u3002
+\u5df2\u53d1\u51fa HTTP \u8bf7\u6c42\uff0c\u6b63\u5728\u7b49\u5f85\u56de\u5e94... 200 OK
+\u957f\u5ea6\uff1a 148762 (145K) [image/png]
+\u6b63\u5728\u4fdd\u5b58\u81f3: \u201cpython2.png\u201d
+
+python2.png         100%[===================>] 145.28K  --.-KB/s    in 0.02s   
+
+2020-02-11 09:58:17 (9.34 MB/s) - \u5df2\u4fdd\u5b58 \u201cpython2.png\u201d [148762/148762])
+
+shiyanlou:Louplus/ (master*) $ wget https://labfile.oss.aliyuncs.com/courses/1330/git.png\~
+--2020-02-11 09:58:28--  https://labfile.oss.aliyuncs.com/courses/1330/git.png~
+\u6b63\u5728\u89e3\u6790\u4e3b\u673a labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)... 47.110.177.159
+\u6b63\u5728\u8fde\u63a5 labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)|47.110.177.159|:443... \u5df2\u8fde\u63a5\u3002
+\u5df2\u53d1\u51fa HTTP \u8bf7\u6c42\uff0c\u6b63\u5728\u7b49\u5f85\u56de\u5e94... 404 Not Found
+2020-02-11 09:58:28 \u9519\u8bef 404\uff1aNot Found\u3002
+
+shiyanlou:Louplus/ (master*) $ git add --all                          [9:58:29]
+shiyanlou:Louplus/ (master*) $ git git commit -m "1"                  [9:58:37]
+git\uff1a'git' \u4e0d\u662f\u4e00\u4e2a git \u547d\u4ee4\u3002\u53c2\u89c1 'git --help'\u3002
+
+\u60a8\u6307\u7684\u662f\u8fd9\u4e2a\u4e48\uff1f
+	init
+shiyanlou:Louplus/ (master*) $ git commit -m "1"                     [10:00:22]
+[master \uff08\u6839\u63d0\u4ea4\uff09 7214c12] 1
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 linux.png
+ create mode 100644 python1.png
+ create mode 100644 python2.png
+shiyanlou:Louplus/ (master) $ wget https://labfile.oss.aliyuncs.com/courses/1330/git.png                                           [10:02:03]
+--2020-02-11 10:04:02--  https://labfile.oss.aliyuncs.com/courses/1330/git.png
+\u6b63\u5728\u89e3\u6790\u4e3b\u673a labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)... 47.110.177.159
+\u6b63\u5728\u8fde\u63a5 labfile.oss.aliyuncs.com (labfile.oss.aliyuncs.com)|47.110.177.159|:443... \u5df2\u8fde\u63a5\u3002
+\u5df2\u53d1\u51fa HTTP \u8bf7\u6c42\uff0c\u6b63\u5728\u7b49\u5f85\u56de\u5e94... 200 OK
+\u957f\u5ea6\uff1a 71912 (70K) [image/png]
+\u6b63\u5728\u4fdd\u5b58\u81f3: \u201cgit.png\u201d
+
+git.png                             100%[=================================================================>]  70.23K  --.-KB/s    in 0.001s  
+
+2020-02-11 10:04:02 (121 MB/s) - \u5df2\u4fdd\u5b58 \u201cgit.png\u201d [71912/71912])
+
+shiyanlou:Louplus/ (master*) $ git commit -m "2"                                                                                   [10:04:02]
+\u4f4d\u4e8e\u5206\u652f master
+\u60a8\u7684\u5206\u652f\u57fa\u4e8e 'origin/master'\uff0c\u4f46\u6b64\u4e0a\u6e38\u5206\u652f\u5df2\u7ecf\u4e0d\u5b58\u5728\u3002
+  \uff08\u4f7f\u7528 "git branch --unset-upstream" \u6765\u4fee\u590d\uff09
+\u672a\u8ddf\u8e2a\u7684\u6587\u4ef6:
+	git.png
+
+\u63d0\u4ea4\u4e3a\u7a7a\uff0c\u4f46\u662f\u5b58\u5728\u5c1a\u672a\u8ddf\u8e2a\u7684\u6587\u4ef6
+shiyanlou:Louplus/ (master*) $ git add --all                                                                                       [10:04:16]
+shiyanlou:Louplus/ (master*) $ git commit -m "2"                                                                                   [10:04:35]
+[master e7bc042] 2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 git.png
+shiyanlou:Louplus/ (master) $ git remote add origin master                                                                         [10:04:50]
+fatal: \u8fdc\u7a0b origin \u5df2\u7ecf\u5b58\u5728\u3002
+shiyanlou:Louplus/ (master) $ git push origin master                                                                               [10:10:28]
+Username for 'https://github.com': TangDear
+Password for 'https://TangDear@github.com': 
+\u5bf9\u8c61\u8ba1\u6570\u4e2d: 8, \u5b8c\u6210.
+Delta compression using up to 4 threads.
+\u538b\u7f29\u5bf9\u8c61\u4e2d: 100% (8/8), \u5b8c\u6210.
+\u5199\u5165\u5bf9\u8c61\u4e2d: 100% (8/8), 423.87 KiB | 0 bytes/s, \u5b8c\u6210.
+Total 8 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/TangDear/Louplus.git
+ * [new branch]      master -> master
+shiyanlou:Louplus/ (master) $ cd ~                                                                                                 [10:11:10]
+shiyanlou:~/ $ ls                                                                                                                  [10:13:52]
+Code  Desktop  gitproject  golang  lib  Louplus  node_modules  package.json  src-gen  uni  webpack.config.js  yarn.lock
+shiyanlou:~/ $ cd Code                                                                                                             [10:14:00]
+shiyanlou:Code/ $ touch git.txt                                                                                                    [10:14:17]
+shiyanlou:Code/ $ gedit git.txt 
